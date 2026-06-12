@@ -1,0 +1,780 @@
+@import "../../vars.css";
+
+/* Main Section */
+.experienceSection {
+  position: relative;
+  min-height: 100vh;
+  padding: 100px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 50%, rgba(216, 200, 176, 0.1) 100%);
+  overflow: hidden;
+}
+
+/* Animated Background */
+.bgDecoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bgCircle1 {
+  position: absolute;
+  top: -10%;
+  left: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(74, 124, 140, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 20s ease-in-out infinite;
+}
+
+.bgCircle2 {
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(166, 178, 164, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 15s ease-in-out infinite reverse;
+}
+
+.bgCircle3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(216, 200, 176, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 10s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(5deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  background: linear-gradient(135deg, #4a7c8c 0%, #2d5b7b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Company Card */
+.companyCard {
+  background: transparent;
+  border-radius: 28px;
+  padding: 0;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.companyCardContent {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding: 50px;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, rgba(74, 124, 140, 0.08) 0%, rgba(166, 178, 164, 0.08) 100%);
+  border: 2px solid rgba(74, 124, 140, 0.2);
+  border-radius: 28px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 40px -10px rgba(74, 124, 140, 0.15);
+}
+
+.companyBadge {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #4a7c8c 0%, #2d5b7b 100%);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  color: white;
+  box-shadow: 0 15px 40px rgba(74, 124, 140, 0.3);
+  flex-shrink: 0;
+}
+
+.companyInfo {
+  flex: 1;
+}
+
+.companyRole {
+  font-size: 38px;
+  font-weight: 900;
+  color: #1f2937;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.companyName {
+  font-size: 22px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #4a7c8c 0%, #2d5b7b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+}
+
+.companyMetaBar {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.metaBadge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: white;
+  border: 2px solid rgba(74, 124, 140, 0.2);
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4a7c8c;
+  box-shadow: 0 4px 12px rgba(74, 124, 140, 0.1);
+}
+
+.metaBadge svg {
+  font-size: 16px;
+  color: #4a7c8c;
+}
+
+/* Timeline Line */
+.timelineLine {
+  position: absolute;
+  left: 50%;
+  top: 200px;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #4a7c8c 0%, rgba(74, 124, 140, 0.3) 100%);
+  transform: translateX(-50%);
+  border-radius: 4px;
+}
+
+/* Projects Timeline */
+.projectsTimeline {
+  position: relative;
+  padding-top: 20px;
+  display: flex;
+  gap: 4%;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+/* Timeline Item */
+.timelineItem {
+  position: relative;
+  flex: 1;
+  max-width: 48%;
+  display: flex;
+}
+
+/* Timeline Dot */
+.timelineDot {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4a7c8c 0%, #2d5b7b 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  border: 4px solid white;
+  box-shadow: 0 4px 20px rgba(74, 124, 140, 0.3);
+}
+
+.timelineDot svg {
+  font-size: 24px;
+  color: white;
+}
+
+.timelineItem:first-child .timelineDot {
+  left: calc(100% + 2%);
+}
+
+.timelineItem:last-child .timelineDot {
+  left: -2%;
+  transform: translateX(-50%);
+}
+
+/* Project Card */
+.projectCard {
+  width: 100%;
+  background: white;
+  border-radius: 24px;
+  padding: 40px;
+  border: 3px solid rgba(74, 124, 140, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.projectCard::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #4a7c8c);
+  right: -40px;
+}
+
+.timelineItem:last-child .projectCard::after {
+  left: -40px;
+  right: auto;
+  background: linear-gradient(270deg, transparent, #4a7c8c);
+}
+
+.projectCard:hover {
+  transform: scale(1.03);
+  box-shadow: 0 25px 60px rgba(74, 124, 140, 0.25);
+  border-color: #4a7c8c;
+}
+
+.projectHeader {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid rgba(74, 124, 140, 0.1);
+}
+
+.projectTitle {
+  font-size: 28px;
+  font-weight: 900;
+  color: #1f2937;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.roleTag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: linear-gradient(135deg, rgba(74, 124, 140, 0.1), rgba(45, 91, 123, 0.1));
+  border: 2px solid rgba(74, 124, 140, 0.3);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #4a7c8c;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.projectDescription {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #6b7280;
+  margin-bottom: 28px;
+}
+
+/* Decorative Corner */
+.cardCorner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, rgba(74, 124, 140, 0.08) 0%, transparent 100%);
+  border-radius: 0 24px 0 100%;
+}
+
+/* Sections */
+.highlightsSection,
+.techSection {
+  margin-bottom: 28px;
+}
+
+.sectionLabel {
+  font-size: 12px;
+  font-weight: 800;
+  color: #4a7c8c;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionLabel::before {
+  content: '';
+  width: 4px;
+  height: 16px;
+  background: linear-gradient(180deg, #4a7c8c 0%, #2d5b7b 100%);
+  border-radius: 2px;
+}
+
+/* Highlights List */
+.highlightsList {
+  display: grid;
+  gap: 12px;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(74, 124, 140, 0.04) 0%, rgba(166, 178, 164, 0.04) 100%);
+  border-radius: 10px;
+  border-left: 3px solid rgba(74, 124, 140, 0.3);
+  transition: all 0.3s ease;
+}
+
+.highlightItem:hover {
+  background: linear-gradient(135deg, rgba(74, 124, 140, 0.08) 0%, rgba(166, 178, 164, 0.08) 100%);
+  border-left-color: #4a7c8c;
+  transform: translateX(5px);
+}
+
+.checkIcon {
+  color: #4a7c8c;
+  font-size: 16px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Tech Badges */
+.techBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.techBadge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: white;
+  border: 2px solid rgba(74, 124, 140, 0.15);
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.techBadge:hover {
+  border-color: rgba(74, 124, 140, 0.4);
+  background: linear-gradient(135deg, rgba(74, 124, 140, 0.08) 0%, rgba(166, 178, 164, 0.08) 100%);
+  box-shadow: 0 8px 20px rgba(74, 124, 140, 0.2);
+  transform: translateY(-2px);
+}
+
+.techIcon {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.techName {
+  font-weight: 600;
+}
+
+/* Responsive Styles */
+
+/* Large Tablets & Small Desktops */
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0 30px;
+  }
+
+  .title {
+    font-size: 48px;
+  }
+
+  .companyCardContent {
+    padding: 40px;
+  }
+
+  .companyRole {
+    font-size: 32px;
+  }
+
+  .companyName {
+    font-size: 20px;
+  }
+
+  .projectCard {
+    padding: 35px;
+  }
+
+  .projectTitle {
+    font-size: 24px;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 968px) {
+  .experienceSection {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .title {
+    font-size: 42px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .companyCard {
+    margin-bottom: 80px;
+  }
+
+  .companyCardContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 36px;
+  }
+
+  .companyBadge {
+    width: 85px;
+    height: 85px;
+    font-size: 40px;
+  }
+
+  .companyRole {
+    font-size: 28px;
+  }
+
+  .companyName {
+    font-size: 18px;
+  }
+
+  .companyMetaBar {
+    gap: 16px;
+  }
+
+  .timelineLine {
+    left: 30px;
+  }
+
+  .projectsTimeline {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .timelineItem {
+    max-width: 100%;
+    padding-left: 80px;
+  }
+
+  .timelineDot {
+    left: 30px !important;
+    transform: translateX(0) !important;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .projectCard {
+    width: calc(100% - 80px);
+    margin-left: 0;
+    padding: 32px;
+  }
+
+  .projectCard::after {
+    width: 30px !important;
+    left: -30px !important;
+    right: auto !important;
+    background: linear-gradient(270deg, transparent, #4a7c8c) !important;
+  }
+
+  .projectTitle {
+    font-size: 24px;
+  }
+}
+
+/* Mobile Landscape */
+@media screen and (max-width: 768px) {
+  .experienceSection {
+    padding: 60px 0;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .companyCard {
+    margin-bottom: 60px;
+    border-radius: 24px;
+  }
+
+  .companyCardContent {
+    padding: 32px;
+  }
+
+  .companyBadge {
+    width: 75px;
+    height: 75px;
+    font-size: 36px;
+  }
+
+  .companyRole {
+    font-size: 24px;
+  }
+
+  .companyName {
+    font-size: 16px;
+  }
+
+  .metaBadge {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  .timelineLine {
+    left: 24px;
+  }
+
+  .projectsTimeline {
+    gap: 50px;
+  }
+
+  .timelineItem {
+    padding-left: 70px;
+  }
+
+  .timelineDot {
+    left: 24px !important;
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+
+  .projectCard {
+    width: calc(100% - 70px);
+    padding: 28px;
+  }
+
+  .projectTitle {
+    font-size: 22px;
+  }
+
+  .roleTag {
+    font-size: 10px;
+    padding: 5px 12px;
+  }
+
+  .projectDescription {
+    font-size: 14px;
+  }
+
+  .highlightItem {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  .techBadge {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .techIcon {
+    font-size: 20px;
+  }
+}
+
+/* Mobile Portrait */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .companyCard {
+    margin-bottom: 50px;
+    border-radius: 20px;
+  }
+
+  .companyCardContent {
+    padding: 28px;
+  }
+
+  .companyBadge {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+    border-radius: 18px;
+  }
+
+  .companyRole {
+    font-size: 20px;
+  }
+
+  .companyName {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .companyMetaBar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .metaBadge {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .timelineLine {
+    left: 20px;
+  }
+
+  .projectsTimeline {
+    gap: 40px;
+  }
+
+  .timelineItem {
+    padding-left: 60px;
+  }
+
+  .timelineDot {
+    left: 20px !important;
+    width: 44px;
+    height: 44px;
+    font-size: 16px;
+    border-width: 4px;
+  }
+
+  .projectCard {
+    width: calc(100% - 60px);
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .projectTitle {
+    font-size: 20px;
+  }
+
+  .roleTag {
+    font-size: 9px;
+    padding: 5px 10px;
+  }
+
+  .projectDescription {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .sectionLabel {
+    font-size: 11px;
+  }
+
+  .highlightItem {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
+  .checkIcon {
+    font-size: 14px;
+  }
+
+  .techBadge {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .techIcon {
+    font-size: 18px;
+  }
+
+  .cardCorner {
+    width: 60px;
+    height: 60px;
+  }
+}
