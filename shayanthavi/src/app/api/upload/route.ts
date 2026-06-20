@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { put } from "@vercel/blob";
 import { requireAuth } from "@/lib/api-auth";
+import { getBlobAccess } from "@/lib/blob-config";
 
 export async function POST(request: NextRequest) {
   const { error } = await requireAuth();
@@ -16,7 +17,6 @@ export async function POST(request: NextRequest) {
 
     const token = process.env.BLOB_READ_WRITE_TOKEN;
     if (!token) {
-      // Fallback for local dev without Blob: save reference path
       const filename = `/assets/uploads/${Date.now()}-${file.name}`;
       return NextResponse.json({
         url: filename,
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     }
 
     const blob = await put(`portfolio/${Date.now()}-${file.name}`, file, {
-      access: "public",
+      access: getBlobAccess(),
       token,
     });
 

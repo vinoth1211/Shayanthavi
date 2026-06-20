@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { FaPlay, FaChevronLeft, FaChevronRight, FaExternalLinkAlt } from "react-icons/fa";
 import type { ProjectsData } from "@/lib/content/types";
+import { resolveImageUrl } from "@/lib/blob-config";
 import styles from "./Projects.module.css";
 
 interface ProjectsProps {
@@ -133,7 +134,7 @@ export function Projects({ data }: ProjectsProps) {
                             className={styles.mainScreenshot}
                           >
                             <img
-                              src={screenshots[currentImageIndex]}
+                              src={resolveImageUrl(screenshots[currentImageIndex])}
                               alt={`${project.title} screenshot ${currentImageIndex + 1}`}
                               className={styles.screenshotImage}
                             />
@@ -171,7 +172,7 @@ export function Projects({ data }: ProjectsProps) {
                                   }`}
                                 >
                                   <img
-                                    src={screenshot}
+                                    src={resolveImageUrl(screenshot)}
                                     alt={`Thumbnail ${thumbIndex + 1}`}
                                     className={styles.thumbnailImage}
                                   />

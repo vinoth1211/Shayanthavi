@@ -16,6 +16,9 @@ import * as schema from "../drizzle/schema";
 
 const ASSETS_DIR = join(process.cwd(), "public", "assets");
 const token = process.env.BLOB_READ_WRITE_TOKEN;
+const blobAccess = (process.env.BLOB_ACCESS?.toLowerCase() === "public" ? "public" : "private") as
+  | "public"
+  | "private";
 
 function walkDir(dir: string): string[] {
   if (!existsSync(dir)) return [];
@@ -54,7 +57,7 @@ async function main() {
     const relPath = "/" + relative(join(process.cwd(), "public"), filePath).replace(/\\/g, "/");
     const buffer = readFileSync(filePath);
     const blob = await put(`portfolio${relPath}`, buffer, {
-      access: "public",
+      access: blobAccess,
       token,
     });
     urlMap.set(relPath, blob.url);

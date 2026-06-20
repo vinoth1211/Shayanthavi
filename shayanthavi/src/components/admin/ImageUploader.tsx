@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { resolveImageUrl } from "@/lib/blob-config";
 
 interface ImageUploaderProps {
   value: string;
@@ -40,7 +41,7 @@ export function ImageUploader({ value, onChange, label = "Image" }: ImageUploade
       <label className="block text-sm font-medium text-gray-700">{label}</label>
       {value && (
         <div className="relative w-32 h-32 rounded-lg overflow-hidden border border-gray-200">
-          <img src={value} alt="Preview" className="w-full h-full object-cover" />
+          <img src={resolveImageUrl(value)} alt="Preview" className="w-full h-full object-cover" />
         </div>
       )}
       <input

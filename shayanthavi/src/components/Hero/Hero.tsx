@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FaDownload } from "react-icons/fa";
+import { resolveImageUrl } from "@/lib/blob-config";
 import type { HeroData } from "@/lib/content/types";
 
 interface HeroProps {
@@ -69,7 +70,7 @@ export function Hero({ data }: HeroProps) {
             </motion.a>
             {data.cvUrl && (
               <motion.a
-                href={data.cvUrl}
+                href={resolveImageUrl(data.cvUrl)}
                 download={data.cvDownloadName}
                 whileHover={{ scale: 1.05, backgroundColor: "#4a7c8c" }}
                 whileTap={{ scale: 0.95 }}
@@ -90,7 +91,7 @@ export function Hero({ data }: HeroProps) {
           <div className="relative z-10">
             {data.heroImageUrl && (
               <img
-                src={data.heroImageUrl}
+                src={resolveImageUrl(data.heroImageUrl)}
                 alt={data.name}
                 className="w-80 h-auto md:w-[450px] object-contain drop-shadow-2xl"
                 style={{ filter: "drop-shadow(0 20px 40px rgba(74, 124, 140, 0.3))" }}
