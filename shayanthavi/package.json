@@ -11,6 +11,7 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "seed": "tsx scripts/seed.ts",
+    "sync-assets": "tsx scripts/sync-assets.ts",
     "upload-assets": "tsx scripts/upload-assets.ts",
     "deploy": "vercel --prod"
   },
