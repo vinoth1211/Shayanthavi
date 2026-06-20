@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 import { Logo } from "../Logo/Logo";
@@ -33,9 +34,9 @@ export function Navbar({ navItems, logoInitials = "ST" }: NavbarProps) {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="/">
+        <Link href="/">
           <Logo initials={logoInitials} />
-        </a>
+        </Link>
 
         <ul className="hidden md:flex space-x-8">
           {navItems.map((item, index) => (
