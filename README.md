@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Shayanthavi Tharmananthan - Portfolio
 
 A professional, elegant, and animated personal portfolio website for **Saya Aananth** - Computer Engineering Undergraduate at the University of Ruhuna. Built with modern web technologies featuring a minimal, asymmetrical design with olive accents, smooth animations, and responsive layouts.
